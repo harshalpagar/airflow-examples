@@ -1,4 +1,4 @@
-FROM apache/airflow:2.5.1-python3.9
+FROM apache/airflow:2.8.2-python3.9
 
 COPY requirements.txt /requirements.txt
 
@@ -12,4 +12,5 @@ RUN apt-get update && apt-get install -y \
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 USER airflow
+
 ENTRYPOINT ["/bin/bash","/start.sh"]
