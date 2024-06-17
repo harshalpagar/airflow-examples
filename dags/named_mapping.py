@@ -19,7 +19,7 @@ with DAG(
                 {"country_name": "BRA"}, {"country_name": "MEX"}]
 
 
-    get_counties = PythonOperator(dag=named_mapping_workflow_dag, task_id="country-provider",
+    get_counties = PythonOperator(dag=named_mapping_workflow_dag, task_id="get_countries",
                                   python_callable=get_countries, do_xcom_push=True)
 
     print_country_name = BashOperator.partial(dag=named_mapping_workflow_dag,
