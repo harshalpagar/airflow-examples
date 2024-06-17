@@ -14,7 +14,8 @@ Just run docker file and standalone airflow will be running on your machine.
 3. Run the docker image
 
     ```docker run -p 8080:8080 -v /c/local/clone/path/airflow-examples/dags:/opt/airflow/dags  -d airflow-local```
-    
+    example: 
+    ```docker run -p 8080:8080 -v /c/study/airflow-examples/dags:/opt/airflow/dags  -d airflow-local```
     Here replace local path of airflow DAG's repository, so that if you made changes to dags in the folder we don't have to restart docker. 
 4. After successful run, this will initialize airflow database, webserver and scheduler.
 5. Airflow web ui would be started at http://localhost:8080/home 
